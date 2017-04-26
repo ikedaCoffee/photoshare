@@ -6,7 +6,16 @@ class PhotosController < ApplicationController
   end
 
   def new
-    @photo = Photo.new
+    if params[:back]
+      @photo = Photo.new(photo_params)
+    else
+      @photo = Photo.new
+    end
+  end
+
+  def confirm
+    @photo = Photo.new(photo_params)
+    render :new if @photo.invalid?
   end
 
   def create
