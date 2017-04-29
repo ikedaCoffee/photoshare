@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(photo_params)
     if @photo.save
-      redirect_to photos_path, notice: "新しい写真を投稿しました！"
+      redirect_to photos_path, notice: "新規投稿しました"
     else
       render 'new'
     end
@@ -32,12 +32,12 @@ class PhotosController < ApplicationController
 
   def update
     @photo.update(photo_params)
-    redirect_to photos_path, notice: "更新しました!"
+    redirect_to photos_path, notice: "更新しました"
   end
 
   def destroy
     @photo.destroy
-    redirect_to photos_path, notice: "削除しました！"
+    redirect_to photos_path, notice: "削除しました"
   end
 
   private

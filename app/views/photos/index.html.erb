@@ -1,12 +1,15 @@
-<p><%= notice %></p>
-
-<h1>写真一覧</h1>
-
-<p><%= link_to "新しくつくる", new_photo_path %></p>
-
-<% @photos.each do |photo| %>
-  <p>タイトル: <%= photo.title %></p>
-  <p>本文: <%= photo.content %></p>
-  <%= link_to "編集", edit_photo_path(photo.id) %>
-  <%= link_to "削除", photo_path(photo.id), method: :delete, data: {confirm: '本当に削除しますか？'} %>
-<% end %>
+<div class="container">
+  <div class="wrapper col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+    <p><br /><%= notice %></p>
+    <h1>写真一覧</h1>
+    <p><%= link_to "新規投稿", new_photo_path, class: 'btn btn-default' %></p>
+    <% @photos.each do |photo| %>
+      <div class="row">
+        <h4><strong><%= photo.title %></strong></h4>
+        <p><%= photo.content %></p>
+        <%= link_to "編集", edit_photo_path(photo.id), class: 'btn btn-default btn-sm' %>
+        <%= link_to "削除", photo_path(photo.id), method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'btn btn-default btn-sm' %>
+      </div>
+    <% end %>
+  </div>
+</div>

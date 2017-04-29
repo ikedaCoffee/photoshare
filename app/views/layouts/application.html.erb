@@ -2,13 +2,28 @@
 <html>
 <head>
   <title>Photoshare</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="<%= asset_path "photoshare_icon.png" %>">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
+<header>
+  <ul>
+    <li><%= link_to image_tag("photoshare_home.png", class: "home-image", alt: "home"), root_path %></li>
+    <li><%= link_to "写真一覧", photos_path %></li>
+    <li><%= link_to "新規投稿", new_photo_path %></li>
+  </ul>
+</header>
+
 <%= yield %>
+
+<footer>
+  <p>運営会社DIVE INTO CODE株式会社</p>
+  <p>© 2015-2017 Copyright DIVE INTO CODE Corp.</p>
+</footer>
 
 </body>
 </html>
