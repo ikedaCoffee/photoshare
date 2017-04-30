@@ -1,7 +1,8 @@
 <section class="about">
+  <p><%= notice %><%= alert %></p>
   <%= image_tag "photoshare.png", alt: "photoshare" %>
   <p>Photoshareは写真共有アプリです。</p>
   <p>
-    <%= image_tag "photoshare_camera.png", class: "camera-image", alt: "camera" %>
+    <%= link_to image_tag("photoshare_camera.png", class: "camera-image", alt: "camera"), photos_path %>
   </p>
 </section>
