@@ -17,8 +17,10 @@ input[type="submit"].btn-block{
 }
 
 .user-image img {
+
   border-radius: 50%;
   width: 50px;
-  height: auto;
+  height: 50px;
+  object-fit: cover;
   margin-right: 5px;
 }
