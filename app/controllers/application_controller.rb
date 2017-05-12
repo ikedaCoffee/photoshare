@@ -7,6 +7,8 @@ class ApplicationController < ActionController::Base
 
   PERMISSIBLE_ATTRIBUTES = %i(name)
 
+  PERMISSIBLE_ATTRIBUTES = %i(name avatar avatar_cache)
+
   protected
 
     def configure_permitted_parameters
