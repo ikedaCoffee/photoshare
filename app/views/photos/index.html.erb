@@ -5,7 +5,10 @@
     <p><%= link_to "新規投稿", new_photo_path, class: 'btn btn-default' %></p>
     <% @photos.each do |photo| %>
       <div class="row">
-        <p><%= photo.user.name %>が投稿</p>
+        <p>
+          <span class="user-image"><%= profile_img(photo.user) %></span>
+          <%= photo.user.name %>が投稿
+        </p>
         <h4><strong><%= photo.title %></strong></h4>
         <p><%= photo.content %></p>
         <%= link_to "編集", edit_photo_path(photo.id), class: 'btn btn-default btn-sm' %>

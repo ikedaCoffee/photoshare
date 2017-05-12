@@ -36,14 +36,17 @@
         <br>
 
         <div class="field">
-          <p class="info-change-pw">※パスワードを変更するには、現在のパスワードを入力する必要があります。</p>
+          <p class="info-change-pw">※変更するには、現在のパスワードを入力する必要があります。</p>
           <%= f.password_field :current_password, autocomplete: "off", class: "form-control", placeholder: "現在のパスワード" %>
         </div>
 
       <% end %>
 
+      <br>
+
       <div class="field">
         <%= profile_img(@user) if profile_img(@user) %>
+        <br><br>
         <%= f.file_field :avatar %>
         <%= f.hidden_field :avatar_cache %>
       </div>
