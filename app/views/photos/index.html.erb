@@ -18,7 +18,7 @@
         <p><%= photo.content %></p>
         <%= link_to "編集", edit_photo_path(photo.id), class: 'btn btn-default btn-sm' %>
         <%= link_to "削除", photo_path(photo.id), method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'btn btn-default btn-sm' %>
-        <p><br>投稿日時：<%= photo.created_at.strftime("%F %R UTC") %><p>
+        <p><br><%= photo.updated_at.strftime("%F %R UTC") %><p>
       </div>
     <% end %>
   </div>
