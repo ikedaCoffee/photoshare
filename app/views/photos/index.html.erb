@@ -3,16 +3,22 @@
     <p><br /><%= notice %></p>
     <h1>写真一覧</h1>
     <p><%= link_to "新規投稿", new_photo_path, class: 'btn btn-default' %></p>
-    <% @photos.each do |photo| %>
+    <% @photos.reverse_each do |photo| %>
       <div class="row">
         <p>
           <span class="user-image"><%= profile_img(photo.user) %></span>
           <%= photo.user.name %>が投稿
         </p>
         <h4><strong><%= photo.title %></strong></h4>
+        <% if photo.image? %>
+          <br>
+          <%= image_tag(photo.image) %>
+          <br><br>
+        <% end %>
         <p><%= photo.content %></p>
         <%= link_to "編集", edit_photo_path(photo.id), class: 'btn btn-default btn-sm' %>
         <%= link_to "削除", photo_path(photo.id), method: :delete, data: {confirm: '本当に削除しますか？'}, class: 'btn btn-default btn-sm' %>
+        <p><br>Created at <%= photo.created_at.strftime("%F %R UTC") %><p>
       </div>
     <% end %>
   </div>
