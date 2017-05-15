@@ -24,3 +24,26 @@ input[type="submit"].btn-block{
   object-fit: cover;
   margin-right: 5px;
 }
+
+.page-top-btn {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  z-index: 20;
+  display: none;
+  border-radius: 50px;
+  background: black;
+  width: 60px;
+  height: 60px;
+  transition: all 0.3s;
+  cursor: pointer;
+  a {
+    display: block;
+    color: white;
+    line-height: 60px;
+    text-decoration: none;
+  }
+  &:hover {
+    opacity: 0.7;
+  }
+}

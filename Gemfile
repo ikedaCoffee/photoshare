@@ -51,6 +51,8 @@ group :development do
   gem 'dotenv-rails'
 end
 
+gem 'jquery-turbolinks'
+
 gem 'twitter-bootstrap-rails'
 
 gem 'devise'
